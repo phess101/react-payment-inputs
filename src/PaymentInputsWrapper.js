@@ -1,15 +1,18 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React from "react";
 
 const FieldWrapper = styled.div`
   display: inline-flex;
   flex-direction: column;
 
   & {
-    ${props => (props.hasErrored && props.styles.fieldWrapper ? props.styles.fieldWrapper.errored : undefined)};
+    ${props =>
+      props.hasErrored && props.styles.fieldWrapper
+        ? props.styles.fieldWrapper.errored
+        : undefined};
   }
 
-  ${props => (props.styles.fieldWrapper ? props.styles.fieldWrapper.base : undefined)};
+  ${props =>
+    props.styles.fieldWrapper ? props.styles.fieldWrapper.base : undefined};
 `;
 const InputWrapper = styled.div`
   align-items: center;
@@ -27,7 +30,8 @@ const InputWrapper = styled.div`
       css`
         border-color: #c9444d;
         box-shadow: #c9444d 0px 0px 0px 1px;
-        ${props => props.styles.inputWrapper && props.styles.inputWrapper.errored};
+        ${props =>
+          props.styles.inputWrapper && props.styles.inputWrapper.errored};
       `};
   }
 
@@ -37,7 +41,8 @@ const InputWrapper = styled.div`
       css`
         border-color: #444bc9;
         box-shadow: #444bc9 0px 0px 0px 1px;
-        ${props => props.styles.inputWrapper && props.styles.inputWrapper.focused};
+        ${props =>
+          props.styles.inputWrapper && props.styles.inputWrapper.focused};
       `};
   }
 
@@ -49,7 +54,10 @@ const InputWrapper = styled.div`
     font-size: inherit;
 
     & {
-      ${props => (props.hasErrored && props.styles.input ? props.styles.input.errored : undefined)};
+      ${props =>
+        props.hasErrored && props.styles.input
+          ? props.styles.input.errored
+          : undefined};
     }
 
     ${props => props.styles.input && props.styles.input.base};
@@ -90,7 +98,8 @@ const InputWrapper = styled.div`
     }
   }
 
-  ${props => (props.styles.inputWrapper ? props.styles.inputWrapper.base : undefined)};
+  ${props =>
+    props.styles.inputWrapper ? props.styles.inputWrapper.base : undefined};
 `;
 const ErrorText = styled.div`
   color: #c9444d;
@@ -98,16 +107,31 @@ const ErrorText = styled.div`
   margin-top: 0.25rem;
 
   & {
-    ${props => (props.styles.errorText ? props.styles.errorText.base : undefined)};
+    ${props =>
+      props.styles.errorText ? props.styles.errorText.base : undefined};
   }
 `;
 
 function PaymentInputsWrapper(props) {
-  const { children, error, errorTextProps, focused, inputWrapperProps, isTouched, styles, ...restProps } = props;
+  const {
+    children,
+    error,
+    errorTextProps,
+    focused,
+    inputWrapperProps,
+    isTouched,
+    styles,
+    ...restProps
+  } = props;
   const hasErrored = error && isTouched;
   return (
     <FieldWrapper hasErrored={hasErrored} styles={styles} {...restProps}>
-      <InputWrapper focused={focused} hasErrored={hasErrored} styles={styles} {...inputWrapperProps}>
+      <InputWrapper
+        focused={focused}
+        hasErrored={hasErrored}
+        styles={styles}
+        {...inputWrapperProps}
+      >
         {children}
       </InputWrapper>
       {hasErrored && (

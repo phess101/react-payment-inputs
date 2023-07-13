@@ -11,3 +11,17 @@ npm-debug.log*
 /PaymentInputsWrapper/
 /PaymentInputsContainer/
 /usePaymentInputs/
+/utils\validator/
+/utils\index/
+/utils\formatter/
+/utils\cardTypes/
+/images\visa/
+/images\unionpay/
+/images\placeholder/
+/images\mastercard/
+/images\jcb/
+/images\index/
+/images\hipercard/
+/images\discover/
+/images\dinersclub/
+/images\amex/
